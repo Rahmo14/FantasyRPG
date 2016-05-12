@@ -1,5 +1,6 @@
-package main;
 
+
+import java.applet.Applet;
 import java.awt.Color;
 
 public class AnimatedFigure extends Applet {
@@ -89,4 +90,3 @@ public class AnimatedFigure extends Applet {
 
 	}
 
-}
