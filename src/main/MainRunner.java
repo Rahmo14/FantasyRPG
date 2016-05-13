@@ -16,8 +16,6 @@ public class MainRunner {
 		setBackground background = new setBackground();
 		window.add(stick);
 		window.setVisible(true);
-		
-		
-		// hello
+	
 	}
 }

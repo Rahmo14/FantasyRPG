@@ -19,7 +19,7 @@ public class setBackground extends JComponent{
 		
 		Rectangle trunk = new Rectangle (45, 45, 45, 100);
 		g2.draw(trunk);
-		//g2.setColor(new Color(128, 83, 15));
+		g2.setColor(new Color(128, 83, 15));
 		
 	}
 }

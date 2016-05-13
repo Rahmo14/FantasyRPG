@@ -17,8 +17,7 @@ public class AnimatedFigure extends Applet {
 	        // Initialize our horizontal move at 0
 	     horizontalmove = 0; 
     }
-    public void paint (Graphics gr)
-    {
+    public void paint (Graphics gr) {
     	
   //**************************************Hero Stick Figure***********************************************//
         gr.drawLine (0, 400,750,400); // Horizontal Line
@@ -54,6 +53,8 @@ public class AnimatedFigure extends Applet {
         }
         repaint();
         
-            }
+  //**************************************Monster Stick Figure***********************************************//
+
+    }
 }
 
