@@ -17,6 +17,7 @@ public class MainRunner {
 		window.add(stick);
 		window.setVisible(true);
 		
+		
 		// hello
 	}
 }

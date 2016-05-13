@@ -5,8 +5,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class AnimatedFigure extends Applet {
-	private int index = 0;
-    private int horizontalmove = 0; // Horizontal Move counter
+	public int index = 0;
+    public int horizontalmove = 0; // Horizontal Move counter
     int[] horiz = {45,40,35,30};
     int[] vert = {70,75,80,80};
     private int sleep = 100;
