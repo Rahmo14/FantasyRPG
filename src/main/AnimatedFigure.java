@@ -21,12 +21,14 @@ public class AnimatedFigure extends Applet {
     {
         gr.drawLine (0, 400,750,400);
 	 
-        // Add horizontal move to each line to make it move its x coordinate
-        gr.drawOval (20 + horizontalmove,200,50,50);
-        gr.drawLine (45 + horizontalmove,250,45 + horizontalmove,350);
-        gr.drawLine (45 + horizontalmove,350,45 + horizontalmove,400);
-        gr.setColor (Color.WHITE);
-        gr.drawLine (30 ,60,horiz[index],vert[index]);
+        gr.drawOval (20 + horizontalmove, 200, 50, 50); // Head
+        gr.drawLine (45 + horizontalmove, 250, 45 + horizontalmove, 340); // Body
+        gr.drawLine (45 + horizontalmove, 288, 65 + horizontalmove, 250); // Arm
+        gr.drawLine (45 + horizontalmove, 340, 45 + horizontalmove, 400); // Straight leg
+        gr.drawLine (45 + horizontalmove, 340, 65 + horizontalmove, 400); // Diagonal leg
+        
+        
+       // gr.drawLine (30 ,60,horiz[index],vert[index]);
        // ++index;
        // ++horizontalmove;
 
