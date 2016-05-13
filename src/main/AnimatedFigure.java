@@ -19,18 +19,26 @@ public class AnimatedFigure extends Applet {
     }
     public void paint (Graphics gr)
     {
-        gr.drawLine (0, 400,750,400);
+        gr.drawLine (0, 400,750,400); // Horizontal Line
 	 
         gr.drawOval (20 + horizontalmove, 200, 50, 50); // Head
         gr.drawLine (45 + horizontalmove, 250, 45 + horizontalmove, 340); // Body
-        gr.drawLine (45 + horizontalmove, 288, 65 + horizontalmove, 250); // Arm
+        gr.drawLine (45 + horizontalmove, 300, 80 + horizontalmove, 265); // Arm1
+        gr.drawLine (45 + horizontalmove, 300, 80 + horizontalmove, 300); // Arm2
         gr.drawLine (45 + horizontalmove, 340, 45 + horizontalmove, 400); // Straight leg
-        gr.drawLine (45 + horizontalmove, 340, 65 + horizontalmove, 400); // Diagonal leg
+        //gr.drawLine (45 + horizontalmove, 340, 65 + horizontalmove, 400); // Diagonal leg
         
+        gr.drawOval (77 + horizontalmove, 273, 6, 6);                     // \
+        gr.drawLine (80 + horizontalmove, 273, 80 + horizontalmove, 170); //  > Sword
+        gr.drawLine (70 + horizontalmove, 263, 90 + horizontalmove, 263); // /  
         
-       // gr.drawLine (30 ,60,horiz[index],vert[index]);
-       // ++index;
-       // ++horizontalmove;
+        gr.drawOval (70 + horizontalmove, 290, 20, 20); //  > Shield
+        gr.drawOval (57 + horizontalmove, 277, 45, 45); // / 
+       
+        
+        gr.drawLine (30 ,60,horiz[index],vert[index]);
+//        ++index;
+//        ++horizontalmove;
 
         if(index == horiz.length)
             index = 0;
@@ -42,7 +50,7 @@ public class AnimatedFigure extends Applet {
         gr.setColor (Color.BLACK);
 	 
         // Again add the horizontal move value to x coordinates
-        gr.drawLine (30 + horizontalmove,60,horiz[index] + horizontalmove,vert[index]);
+        gr.drawLine (45 + horizontalmove, 340, 65 + horiz[index] + horizontalmove, 320 + vert[index]);
         try
         {
             Thread.sleep (sleep);
