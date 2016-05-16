@@ -4,7 +4,9 @@ import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class AnimatedFigure extends Applet {
+import javax.swing.JPanel;
+
+public class AnimatedFigure extends JPanel {
 	public int index = 0;
     public int horizontalmove = 0; // Horizontal Move counter
     int[] horiz = {45,40,35,30};
@@ -17,8 +19,9 @@ public class AnimatedFigure extends Applet {
 	        // Initialize our horizontal move at 0
 	     horizontalmove = 0; 
     }
-    public void paint (Graphics gr) {
-    	
+    @Override
+    public void paintComponent(Graphics gr) {
+    	super.paintComponent(gr);
   //**************************************Hero Stick Figure***********************************************//
         gr.drawLine (0, 400,750,400); // Horizontal Line
         gr.drawOval (20 + horizontalmove, 200, 50, 50); // Head
@@ -35,8 +38,7 @@ public class AnimatedFigure extends Applet {
         gr.drawLine (30 ,60,horiz[index],vert[index]);
 //        ++index;
 //        ++horizontalmove;
-        if(index == horiz.length)
-            index = 0;
+        
         // Once we reach 150, start back at zero.
         if (horizontalmove == 150) {
             horizontalmove = 0;
@@ -55,6 +57,13 @@ public class AnimatedFigure extends Applet {
         
   //**************************************Monster Stick Figure***********************************************//
 
+    }
+    
+    public void update() {
+    	index++;
+    	horizontalmove++;
+    	if(index == horiz.length)
+            index = 0;
     }
 }
 
