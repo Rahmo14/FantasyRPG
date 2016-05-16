@@ -18,11 +18,11 @@ public class Hero {
 		return this.myattack;
 	}
 
-	public int random() {
+	public static int random() {
 		return (int) (Math.random() * 10);
 	}
 
-	public boolean attack() {
+	public static boolean attack() {
 		if (random() % 2 == 0) {
 			return true; // means that hero will attack
 		} else {
