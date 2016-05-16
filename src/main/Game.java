@@ -5,16 +5,17 @@ import java.util.Scanner;
 public class Game {
 public static void main(String[] args){
 	Hero player = new Hero(20, 3);
+	Monster dragon = new Monster(15, 5);
 	
 	
 	Scanner console = new Scanner(System.in);
 	System.out.println("Do you want to play?");
 	String answer = console.nextLine();
-	if(answer == "Yes"){
+	if(answer.equals("Yes")){
 		//Show title and characters in graphics window
 		//Show hero on one side and monster on the other
 		
-		playGame();
+		playGame(player, dragon);
 	}
 }
 
@@ -30,6 +31,7 @@ public static void playGame(Hero x, Monster y) {
 	Scanner console = new Scanner(System.in);
 	System.out.println("What would you like to do?  Attack[a]  or  Heal[h] ");
 	String answer = console.nextLine();
+	while (hHero > 0 || hMonster > 0) {
 		if(answer.equals("h")) {
 			if(potions > 0) {
 				potions--;
@@ -45,7 +47,16 @@ public static void playGame(Hero x, Monster y) {
 				hMonster -= aHero;
 			}
 		}
-	
+		
+		System.out.println("Now the dragon attacks you!");
+		
+			if(y.attack() == true){
+				hHero -= aMonster;
+			}
+		
+	}
 	
 }
+
+
 }
