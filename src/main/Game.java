@@ -51,34 +51,35 @@ public static void main(String[] args){
 			hero.add(warrior, BorderLayout.PAGE_END);
 			character.add(hero);
 			warrior.addActionListener(new ActionTwo());
-//			figure.addMouseMotionListener(new MouseMotionListener() {
-//
-//				@Override
-//				public void mouseDragged(MouseEvent e) {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//
-//				@Override
-//				public void mouseMoved(MouseEvent e) {
-//					// TODO Auto-generated method stub
-//					figure.update();
-//					System.out.println("Mouse movement");
-//				}
-//				
-//			});
 		}
 	}
 
 			static class ActionTwo implements ActionListener {
 				public void actionPerformed(ActionEvent e) {
 					JFrame game = new JFrame("Game");
+					JButton atkHero = new JButton("Attack");
+					JButton healHero = new JButton("Heal");
 					game.setVisible(true);
 					game.setSize(750, 480);
 					AnimatedFigure hero = new AnimatedFigure();
 					//monster animation = new monsteranimation
-					game.add(hero);
 					//game.add(monsteranimation, BorderLayout.LINE_END);
+					hero.add(atkHero, BorderLayout.PAGE_END);
+					hero.add(healHero, BorderLayout.PAGE_END);
+					hero.addMouseMotionListener(new MouseMotionListener() {
+									@Override
+									public void mouseDragged(MouseEvent e) {
+										// TODO Auto-generated method stub
+										
+									}
+									@Override
+									public void mouseMoved(MouseEvent e) {
+										// TODO Auto-generated method stub
+										hero.update();
+									}
+									
+								} );
+					game.add(hero);
 				}
 			}
 
