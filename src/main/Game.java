@@ -32,9 +32,8 @@ public static void main(String[] args){
 	title.add(panel);
 	JButton button = new JButton("Play");
 	titleDrawing title1 = new titleDrawing();
-	//title1.add(button, BorderLayout.PAGE_START);
+	title1.add(button, BorderLayout.PAGE_START);
 	title.add(title1);
-	panel.add(button);
 	button.addActionListener(new Action());
 	
 }
@@ -60,11 +59,20 @@ public static void main(String[] args){
 					JFrame game = new JFrame("Game");
 					JButton atkHero = new JButton("Attack");
 					JButton healHero = new JButton("Heal");
+					
+					JPanel pane  = new JPanel(new BorderLayout());
+					
+					game.add(pane);
 					game.setVisible(true);
 					game.setSize(750, 480);
 					AnimatedFigure hero1 = new AnimatedFigure();
-					//monster animation = new monsteranimation
-					//game.add(monsteranimation, BorderLayout.LINE_END);
+					dragonAnimation dragon = new dragonAnimation();
+					
+					
+					hero1.add(dragon, BorderLayout.LINE_END);
+					
+					//pane.add(dragon, BorderLayout.LINE_END);
+					
 					hero1.add(atkHero, BorderLayout.PAGE_END);
 					hero1.add(healHero, BorderLayout.PAGE_END);
 					hero1.addMouseMotionListener(new MouseMotionListener() {
@@ -80,7 +88,8 @@ public static void main(String[] args){
 									}
 									
 								} );
-					game.add(hero1);
+					
+					game.add(hero1, BorderLayout.LINE_START);
 				}
 			}
 

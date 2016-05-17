@@ -23,7 +23,7 @@ public class AnimatedFigure extends JPanel {
     public void paintComponent(Graphics gr) {
     	super.paintComponent(gr);
   //**************************************Hero Stick Figure***********************************************//
-        gr.drawLine (0, 400,750,400); // Horizontal Line
+        //gr.drawLine (0, 400,750,400); // Horizontal Line
         gr.drawOval (20 + horizontalmove, 200, 50, 50); // Head
         gr.drawLine (45 + horizontalmove, 250, 45 + horizontalmove, 340); // Body
         gr.drawLine (45 + horizontalmove, 300, 80 + horizontalmove, 265); // Arm1
@@ -35,7 +35,14 @@ public class AnimatedFigure extends JPanel {
         gr.drawLine (70 + horizontalmove, 263, 90 + horizontalmove, 263); // /  
         gr.drawOval (70 + horizontalmove, 290, 20, 20); // Shield
         gr.drawOval (57 + horizontalmove, 277, 45, 45); // Shield     
-        gr.drawLine (30 ,60,horiz[index],vert[index]);
+  //**************************************Hero Stick Figure***********************************************//
+        
+        
+  //**************************************Dragon Stick Figure***********************************************//
+        
+  //**************************************Dragon Stick Figure***********************************************//
+
+
 //        ++index;
 //        ++horizontalmove;
         
@@ -55,8 +62,7 @@ public class AnimatedFigure extends JPanel {
         }
         repaint();
         
-  //**************************************Monster Stick Figure***********************************************//
-
+ 
     }
     
     public void update() {

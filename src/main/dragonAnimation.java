@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -13,7 +14,6 @@ public class dragonAnimation extends JPanel {
     	gr.drawLine(600, 300, 590, 340);
     	gr.drawLine(590, 340, 580, 300);
     	//Add lines and whatnot here
-    	
     	
     	
 	}
