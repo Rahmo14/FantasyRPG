@@ -31,9 +31,9 @@ public static void main(String[] args){
 	JPanel panel = new JPanel();
 	title.add(panel);
 	JButton button = new JButton("Play");
-	//titleDrawing title = new titleDrawing();
-	//title.add(button, BorderLayout.PAGE_END);
-	//panel.add(title);
+	titleDrawing title1 = new titleDrawing();
+	//title1.add(button, BorderLayout.PAGE_START);
+	title.add(title1);
 	panel.add(button);
 	button.addActionListener(new Action());
 	
