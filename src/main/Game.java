@@ -89,7 +89,7 @@ public static void main(String[] args){
 									
 								} );
 					
-					game.add(hero1, BorderLayout.LINE_START);
+					game.add(hero1);
 				}
 			}
 
