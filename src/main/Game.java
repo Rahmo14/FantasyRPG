@@ -2,11 +2,9 @@ package main;
 
 import java.awt.GridLayout;
 import java.util.Scanner;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
 import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -33,6 +31,9 @@ public static void main(String[] args){
 	JPanel panel = new JPanel();
 	title.add(panel);
 	JButton button = new JButton("Play");
+	//titleDrawing title = new titleDrawing();
+	//title.add(button, BorderLayout.PAGE_END);
+	//panel.add(title);
 	panel.add(button);
 	button.addActionListener(new Action());
 	
