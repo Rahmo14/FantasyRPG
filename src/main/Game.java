@@ -62,12 +62,12 @@ public static void main(String[] args){
 					JButton healHero = new JButton("Heal");
 					game.setVisible(true);
 					game.setSize(750, 480);
-					AnimatedFigure hero = new AnimatedFigure();
+					AnimatedFigure hero1 = new AnimatedFigure();
 					//monster animation = new monsteranimation
 					//game.add(monsteranimation, BorderLayout.LINE_END);
-					hero.add(atkHero, BorderLayout.PAGE_END);
-					hero.add(healHero, BorderLayout.PAGE_END);
-					hero.addMouseMotionListener(new MouseMotionListener() {
+					hero1.add(atkHero, BorderLayout.PAGE_END);
+					hero1.add(healHero, BorderLayout.PAGE_END);
+					hero1.addMouseMotionListener(new MouseMotionListener() {
 									@Override
 									public void mouseDragged(MouseEvent e) {
 										// TODO Auto-generated method stub
@@ -76,11 +76,11 @@ public static void main(String[] args){
 									@Override
 									public void mouseMoved(MouseEvent e) {
 										// TODO Auto-generated method stub
-										hero.update();
+										hero1.update();
 									}
 									
 								} );
-					game.add(hero);
+					game.add(hero1);
 				}
 			}
 
