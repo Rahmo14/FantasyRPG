@@ -70,8 +70,10 @@ public class AnimatedFigure extends JPanel {
     }
     
     public void update() {
-    	index++;
-    	horizontalmove+=15;
+    	
+    		index++;
+    		horizontalmove+=150;
+    	
     	 try
          {
              Thread.sleep (sleep);
