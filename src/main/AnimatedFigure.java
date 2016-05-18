@@ -51,7 +51,7 @@ public class AnimatedFigure extends JPanel {
 //        ++horizontalmove;
         
         // Once we reach 150, start back at zero.
-        if (horizontalmove == 150) {
+        if (horizontalmove == 300) {
             horizontalmove = 0;
         }
         gr.setColor (Color.BLACK);
@@ -71,7 +71,15 @@ public class AnimatedFigure extends JPanel {
     
     public void update() {
     	index++;
-    	horizontalmove++;
+    	horizontalmove+=15;
+    	 try
+         {
+             Thread.sleep (sleep);
+         }
+         catch (InterruptedException e)
+         {
+         }
+         repaint();
     	if(index == horiz.length)
             index = 0;
     }
