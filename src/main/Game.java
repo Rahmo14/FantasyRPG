@@ -11,8 +11,8 @@ import java.awt.Graphics;
 
 public class Game {
 public static void main(String[] args){
-//	Hero player = new Hero(20, 3);
-//	Monster dragon = new Monster(15, 5);
+	Hero player = new Hero(20, 3);
+	Monster dragon = new Monster(15, 5);
 //	Scanner console = new Scanner(System.in);
 //	System.out.println("Do you want to play?");
 //	String answer = console.nextLine();
@@ -71,28 +71,20 @@ public static void main(String[] args){
 					
 					hero1.add(dragon, BorderLayout.LINE_END);
 					
-					//pane.add(dragon, BorderLayout.LINE_END);
 					
 					hero1.add(atkHero, BorderLayout.PAGE_END);
 					hero1.add(healHero, BorderLayout.PAGE_END);
-					hero1.addMouseMotionListener(new MouseMotionListener() {
-									@Override
-									public void mouseDragged(MouseEvent e) {
-										// TODO Auto-generated method stub
-										
-									}
-									@Override
-									public void mouseMoved(MouseEvent e) {
-										// TODO Auto-generated method stub
-										hero1.update();
-									}
-									
-								} );
+
+					atkHero.addActionListener(new ActionListener () {
+						public void actionPerformed(ActionEvent e) {
+							hero1.update();
+						}
+					});
 					
 					game.add(hero1);
 				}
 			}
-
+			
 
 
 public static void playGame(Hero x, Monster y) {
