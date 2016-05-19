@@ -48,9 +48,8 @@ public class AnimatedFigure extends JPanel {
 
 
 //        ++index;
-//        ++horizontalmove;
         
-        // Once we reach 150, start back at zero.
+        // Once we reach 305, start back at zero.
         if (horizontalmove == 300) {
             horizontalmove = 0;
         }
@@ -72,8 +71,7 @@ public class AnimatedFigure extends JPanel {
     public void update() {
     	
     		index++;
-    		horizontalmove+=150;
-    	
+    		horizontalmove+=300;
     	 try
          {
              Thread.sleep (sleep);
@@ -85,5 +83,6 @@ public class AnimatedFigure extends JPanel {
     	if(index == horiz.length)
             index = 0;
     }
+    
 }
 
