@@ -80,6 +80,8 @@ public static void main(String[] args){
 							hero1.update();
 						}
 					});
+					
+					
 					game.add(hero1);
 				}
 			}
@@ -129,4 +131,11 @@ public void paintTitle() {
 }
 
 
+
+
+
+	public void checkCollisions() {
+		//Create three rectangles, one for hero, one for dragon, one for fireball
+		
+	}
 }
