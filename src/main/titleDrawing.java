@@ -34,6 +34,7 @@ public class titleDrawing extends JPanel {
 		gr.drawString("Dragon", 75, 175);
 		gr.setColor(new Color(54, 73, 192));
 		gr.drawString("Slayer", 90, 230 );
+		//title
 
 	}
 }
