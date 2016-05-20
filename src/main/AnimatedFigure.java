@@ -7,21 +7,27 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class AnimatedFigure extends JPanel {
-	public int index = 0;
+public int index = 0;
     public int horizontalmove = 0; // Horizontal Move counter
+    public int count = 0; // vertical move counter
+    public int verticalmove = 0;
     int[] horiz = {45,40,35,30};
     int[] vert = {70,75,80,80};
     private int sleep = 100;
     
     public void start () {
-    	 index = 0;
-		 
-	        // Initialize our horizontal move at 0
-	     horizontalmove = 0; 
+    index = 0;
+ 
+       // Initialize our horizontal move at 0
+    horizontalmove = 0; 
+    }
+    public void verticalMove(){
+    count = 0;
+    verticalmove=0;
     }
     @Override
     public void paintComponent(Graphics gr) {
-    	super.paintComponent(gr);
+    super.paintComponent(gr);
   //**************************************Hero Stick Figure***********************************************//
         gr.drawLine (0, 400,750,400); // Horizontal Line
         gr.drawOval (20 + horizontalmove, 200, 50, 50); // Head
@@ -39,19 +45,43 @@ public class AnimatedFigure extends JPanel {
         
         
   //**************************************Dragon Stick Figure***********************************************//
-        gr.drawLine(550, 300, 600, 300);
-    	gr.drawLine(550,300,490,260);
-    	gr.drawLine(600, 300, 490, 260);
-    	gr.drawLine(600, 300, 590, 340);
-    	gr.drawLine(590, 340, 580, 300);
+        gr.drawLine(500, 210 - verticalmove, 540, 210-verticalmove);//head, 
+        gr.drawLine(540, 210- verticalmove, 520, 250- verticalmove);//40 down, 40 across
+        gr.drawLine(500, 210- verticalmove, 520, 250- verticalmove);
+        gr.drawLine(510, 230- verticalmove, 510, 290- verticalmove);//neck line, 60 down
+        gr.drawLine(530, 230- verticalmove, 530, 290- verticalmove);
+        gr.drawLine(520, 210- verticalmove, 515, 203- verticalmove);//horns
+        gr.drawLine(515, 203- verticalmove, 515, 210- verticalmove);
+        gr.drawLine(520, 210- verticalmove, 525, 203- verticalmove);
+        gr.drawLine(525, 203- verticalmove, 525, 210- verticalmove);
+        gr.drawLine(510, 290- verticalmove, 570, 350- verticalmove);//chest line, 60 across, 60 down
+        gr.drawLine(530, 290- verticalmove, 570, 300- verticalmove);
+        gr.drawRect(570, 300- verticalmove, 90, 50- verticalmove);//body 90 across, 50 down
+        gr.drawLine(660, 300- verticalmove, 700, 230- verticalmove); //tail line 70 up, 40 across
+        gr.drawLine(660,350- verticalmove, 710, 260- verticalmove);
+        gr.drawLine(700, 230- verticalmove, 720, 150- verticalmove);
+        gr.drawLine(710, 260- verticalmove, 720, 150- verticalmove);
+        gr.drawLine(570, 300- verticalmove, 600, 150- verticalmove);//wing
+        gr.drawLine(600, 150- verticalmove, 680, 120- verticalmove);
+        gr.drawLine(680, 120- verticalmove, 660, 300- verticalmove);
+        gr.drawLine(570, 350- verticalmove, 580, 370- verticalmove);//legs, 10 across, 20 down
+        gr.drawLine(580, 370- verticalmove, 590, 350- verticalmove);
+        gr.drawLine(660,350- verticalmove,650,370- verticalmove);
+        gr.drawLine(650, 370- verticalmove, 640, 350- verticalmove);
+        
+   
   //**************************************Dragon Stick Figure***********************************************//
 
 
 //        ++index;
+        ++verticalmove;
         
         // Once we reach 305, start back at zero.
         if (horizontalmove == 300) {
             horizontalmove = 0;
+        }
+        if(verticalmove == 5){
+        verticalmove = -5;
         }
         gr.setColor (Color.BLACK);
         // Again add the horizontal move value to x coordinates
@@ -69,10 +99,10 @@ public class AnimatedFigure extends JPanel {
     }
     
     public void update() {
-    	
-    		index++;
-    		horizontalmove+=300;
-    	 try
+   
+    index++;
+    horizontalmove+=300;
+    try
          {
              Thread.sleep (sleep);
          }
@@ -80,9 +110,8 @@ public class AnimatedFigure extends JPanel {
          {
          }
          repaint();
-    	if(index == horiz.length)
+    if(index == horiz.length)
             index = 0;
     }
     
 }
-
