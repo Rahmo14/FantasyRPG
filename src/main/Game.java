@@ -24,7 +24,7 @@ public static void main(String[] args){
 //	}
 	
 	
-	JFrame title = new JFrame("Test");
+	JFrame title = new JFrame("Fantasy RPG");
 	title.setVisible(true);
 	title.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	title.setSize(300, 300);
