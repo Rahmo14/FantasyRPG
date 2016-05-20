@@ -36,6 +36,6 @@ public class titleDrawing extends JPanel {
 		gr.drawString("Slayer", 90, 230 );
 		//title
 		//try again
-
+		//try again
 	}
 }
