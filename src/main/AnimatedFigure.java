@@ -9,8 +9,10 @@ import javax.swing.JPanel;
 public class AnimatedFigure extends JPanel {
 public int index = 0;
     public int horizontalmove = 0; // Horizontal Move counter
+    public int fireballMove = 0;
     public int count = 0; // vertical move counter
     public int verticalmove = 0;
+    public int counter = 0;
     int[] horiz = {45,40,35,30};
     int[] vert = {70,75,80,80};
     private int sleep = 100;
@@ -24,6 +26,10 @@ public int index = 0;
     public void verticalMove(){
     count = 0;
     verticalmove=0;
+    }
+    public void fireballMove(){
+    	counter = 0;
+    	fireballMove = 0;
     }
     @Override
     public void paintComponent(Graphics gr) {
@@ -45,6 +51,7 @@ public int index = 0;
         
         
   //**************************************Dragon Stick Figure***********************************************//
+        gr.setColor(new Color(98,107,199));
         gr.drawLine(500, 210 - verticalmove, 540, 210-verticalmove);//head, 
         gr.drawLine(540, 210- verticalmove, 520, 250- verticalmove);//40 down, 40 across
         gr.drawLine(500, 210- verticalmove, 520, 250- verticalmove);
@@ -68,6 +75,8 @@ public int index = 0;
         gr.drawLine(580, 370- verticalmove, 590, 350- verticalmove);
         gr.drawLine(660,350- verticalmove,650,370- verticalmove);
         gr.drawLine(650, 370- verticalmove, 640, 350- verticalmove);
+        gr.setColor(new Color (204,102,0));
+        gr.drawOval(515 - fireballMove, 253-verticalmove, 15, 15);//fireball
         
    
         
@@ -79,12 +88,16 @@ public int index = 0;
 //        ++index;
         ++verticalmove;
         
+        
         // Once we reach 305, start back at zero.
         if (horizontalmove == 300) {
             horizontalmove = 0;
         }
         if(verticalmove == 5){
         verticalmove = -5;
+        }
+        if(fireballMove == 400){
+        	fireballMove = 0;
         }
         gr.setColor (Color.BLACK);
         // Again add the horizontal move value to x coordinates
@@ -115,6 +128,10 @@ public int index = 0;
          repaint();
     if(index == horiz.length)
             index = 0;
+    }
+    
+    public void fireball(){
+    	++fireballMove;
     }
     
 }
