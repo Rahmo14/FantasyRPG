@@ -13,16 +13,16 @@ public class Game {
 public static void main(String[] args){
 	Hero player = new Hero(20, 3);
 	Monster dragon = new Monster(15, 5);
-//	Scanner console = new Scanner(System.in);
-//	System.out.println("Do you want to play?");
-//	String answer = console.nextLine();
-//	if(answer.equals("Yes")){
-//		//Show title and characters in graphics window
-//		//Show hero on one side and monster on the other
-//		
-//		playGame(player, dragon);
-//	}
-	//
+	Scanner console = new Scanner(System.in);
+	System.out.println("Do you want to play?");
+	String answer = console.nextLine();
+	if(answer.equals("Yes")){
+		//Show title and characters in graphics window
+		//Show hero on one side and monster on the other
+		
+		playGame(player, dragon);
+	}
+	
 	
 	JFrame title = new JFrame("Fantasy RPG");
 	title.setVisible(true);

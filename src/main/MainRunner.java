@@ -19,14 +19,12 @@ public class MainRunner {
 		setBackground background = new setBackground();
 		window.add(stick);
 		window.setVisible(true);
-		
-		
-		
+
 		// for the background color
+
+		DisplayMode dm = new DisplayMode(800, 600, 16, DisplayMode.REFRESH_RATE_UNKNOWN);
+		Game g = new Game();
+		g.run(dm);
 		
-	        DisplayMode dm = new DisplayMode(800, 600, 16, DisplayMode.REFRESH_RATE_UNKNOWN);
-	        Game g = new Game();
-	        g.run(dm);
-	
 	}
 }
