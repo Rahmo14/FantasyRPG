@@ -41,8 +41,8 @@ public int index = 0;
         gr.drawLine (45 + horizontalmove, 300, 80 + horizontalmove, 265); // Arm1
         gr.drawLine (45 + horizontalmove, 300, 80 + horizontalmove, 300); // Arm2
         gr.drawLine (45 + horizontalmove, 340, 45 + horizontalmove, 400); // Straight leg
-        //gr.drawLine (45 + horizontalmove, 340, 65 + horizontalmove, 400); // Diagonal leg
-        gr.drawOval (77 + horizontalmove, 273, 6, 6);                     // \
+        //gr.drawLine (45 + horizontalmove, 340, 65 + horizontalmove, 400); // Diagonal leg 
+        gr.drawOval (77 + horizontalmove, 273, 6, 6);                     // 
         gr.drawLine (80 + horizontalmove, 273, 80 + horizontalmove, 170); //  > Sword
         gr.drawLine (70 + horizontalmove, 263, 90 + horizontalmove, 263); // /  
         gr.drawOval (70 + horizontalmove, 290, 20, 20); // Shield

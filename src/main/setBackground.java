@@ -29,19 +29,4 @@ public class setBackground extends JComponent {
 		setBackground(Color.GREEN);
 	}
 
-	public class MySimpleLayout extends JFrame {
-
-		private Container c;
-
-		public MySimpleLayout(String str) {
-			super(str);
-			c = getContentPane();
-			c.setLayout(null);
-			c.setBackground(Color.PINK);
-
-		}
-
-	}
 }
-
-// }

@@ -6,7 +6,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 
-//import main.setBackground.Game;
+import main.setBackground.Game;
 
 public class MainRunner {
 
@@ -24,7 +24,7 @@ public class MainRunner {
 
 		DisplayMode dm = new DisplayMode(800, 600, 16, DisplayMode.REFRESH_RATE_UNKNOWN);
 		Game g = new Game();
-		//g.run(dm);
+		g.run(dm);
 		
 	}
 }
