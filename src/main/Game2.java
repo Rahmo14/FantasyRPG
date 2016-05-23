@@ -79,7 +79,7 @@ public static void main(String[] args){
 							JLabel label = new JLabel("You missed the attack!");
 							boolean heroAttack = attack(rand);
 							if (heroAttack == false) {
-								hero1.add(label, BorderLayout.PAGE_START);
+								//hero1.add(label, BorderLayout.PAGE_START);
 							}
 							else {
 								hero1.update();
