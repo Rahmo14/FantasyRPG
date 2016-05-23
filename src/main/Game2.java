@@ -10,9 +10,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Game2 {
+	
+	static Hero player = new Hero(20, 3);
+	static Monster dragon = new Monster(15, 5);
+	
 public static void main(String[] args){
-	Hero player = new Hero(20, 3);
-	Monster dragon = new Monster(15, 5);
 //	Scanner console = new Scanner(System.in);
 //	System.out.println("Do you want to play?");
 //	String answer = console.nextLine();
@@ -66,10 +68,6 @@ public static void main(String[] args){
 					game.setVisible(true);
 					game.setSize(750, 480);
 					AnimatedFigure hero1 = new AnimatedFigure();
-					dragonAnimation dragon = new dragonAnimation();
-					
-					
-					hero1.add(dragon, BorderLayout.LINE_END);
 					
 					
 					hero1.add(atkHero, BorderLayout.PAGE_END);
@@ -77,7 +75,15 @@ public static void main(String[] args){
 
 					atkHero.addActionListener(new ActionListener () {
 						public void actionPerformed(ActionEvent e) {
-							hero1.update();
+							int rand = player.random();
+							JLabel label = new JLabel("You missed the attack!");
+							boolean heroAttack = attack(rand);
+							if (heroAttack == false) {
+								hero1.add(label, BorderLayout.PAGE_START);
+							}
+							else {
+								hero1.update();
+							}
 						}
 					});
 					
@@ -130,7 +136,14 @@ public void paintTitle() {
 	
 }
 
+public static boolean attack(int random) {
+	if (random % 2 == 0) {
+		return true; // means that hero will attack
+	} else {
+		return false; // means that hero will miss attack
 
+	}
+}
 
 
 
