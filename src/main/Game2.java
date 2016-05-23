@@ -78,9 +78,7 @@ public static void main(String[] args){
 					hero1.add(healHero, BorderLayout.PAGE_END);
 				
 					atkHero.addActionListener(new ActionListener () {
-						public void actionPerformed(ActionEvent e) {
-							
-							
+						public void actionPerformed(ActionEvent e) {	
 							int rand = player.random();
 							JLabel label = new JLabel("You missed the attack!");
 							boolean heroAttack = attack(rand);
@@ -98,7 +96,8 @@ public static void main(String[] args){
 
 							}
 						if(healthHero <= 0 || healthMonster <= 0) {
-							System.exit(0);
+							atkHero.addActionListener(new ActionFour());
+							
 						}
 						}
 						//hello
@@ -108,9 +107,23 @@ public static void main(String[] args){
 					game.add(hero1);
 				}
 			}
-			
+						static class ActionFour implements ActionListener {
+							public void actionPerformed (ActionEvent e) {
+								JFrame character = new JFrame("clicked");
+								character.setVisible(true);
+								character.setSize(200, 500);
+								JLabel label = new JLabel("Choose your Character");
+								JButton warrior = new JButton("Warrior");
+								heroDrawing hero = new heroDrawing();	
+								hero.add(label, BorderLayout.PAGE_START);
+								hero.add(warrior, BorderLayout.PAGE_END);
+								character.add(hero);
+								warrior.addActionListener(new ActionTwo());
+							}
+						}
 
-
+						
+						
 public static void playGame(Hero x, Monster y) {
 	int hMonster = y.getHealth();
 	int aMonster = y.getattack();
