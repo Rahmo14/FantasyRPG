@@ -13,6 +13,10 @@ public class Game2 {
 	
 	static Hero player = new Hero(20, 3);
 	static Monster dragon = new Monster(15, 5);
+	static int healthHero = 20;
+	static int healthMonster = 15;
+	static int attkHero = 3;
+	static int atkDragon = 5;
 	
 public static void main(String[] args){
 //	Scanner console = new Scanner(System.in);
@@ -61,7 +65,7 @@ public static void main(String[] args){
 					JFrame game = new JFrame("Game");
 					JButton atkHero = new JButton("Attack");
 					JButton healHero = new JButton("Heal");
-					
+					JButton end = new JButton("End Game");
 					JPanel pane  = new JPanel(new BorderLayout());
 					
 					game.add(pane);
@@ -72,19 +76,32 @@ public static void main(String[] args){
 					
 					hero1.add(atkHero, BorderLayout.PAGE_END);
 					hero1.add(healHero, BorderLayout.PAGE_END);
-
+				
 					atkHero.addActionListener(new ActionListener () {
 						public void actionPerformed(ActionEvent e) {
+							
+							
 							int rand = player.random();
 							JLabel label = new JLabel("You missed the attack!");
 							boolean heroAttack = attack(rand);
+							
 							if (heroAttack == false) {
 								//hero1.add(label, BorderLayout.PAGE_START);
+								hero1.fireball();
+								healthHero-=atkDragon;
+								System.out.println(healthHero);
 							}
 							else {
 								hero1.update();
+								healthMonster-=attkHero;
+								System.out.println(healthMonster);
+
 							}
+						if(healthHero <= 0 || healthMonster <= 0) {
+							System.exit(0);
 						}
+						}
+						
 					});
 					
 					

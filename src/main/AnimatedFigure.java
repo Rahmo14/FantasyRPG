@@ -93,7 +93,7 @@ public int index = 0;
         if(verticalmove == 5){
         verticalmove = -5;
         }
-        if(fireballMove == 400){
+        if(fireballMove == 435){
         	fireballMove = 0;
         }
         gr.setColor (Color.BLACK);
@@ -128,7 +128,16 @@ public int index = 0;
     }
     
     public void fireball(){
-    	++fireballMove;
-    }
+//    	int n = 0;
+//    	while(fireballMove <= 400) {
+//    		fireballMove++;
+//    	}
+//    	while(n < 5) {
+//    		fireballMove = 400;
+//    		n++;
+//    	}
+    	fireballMove+=435;
+    	repaint();
+     }
     
 }
