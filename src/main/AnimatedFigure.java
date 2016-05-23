@@ -70,6 +70,9 @@ public int index = 0;
         gr.drawLine(650, 370- verticalmove, 640, 350- verticalmove);
         
    
+        
+        
+        //gr.fillOval(40, 40, 60, 50); fill color for the fire ball
   //**************************************Dragon Stick Figure***********************************************//
 
 
