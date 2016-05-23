@@ -51,7 +51,7 @@ public int index = 0;
         
         
   //**************************************Dragon Stick Figure***********************************************//
-        //gr.setColor(c);
+        gr.setColor(new Color(98,107,199));
         gr.drawLine(500, 210 - verticalmove, 540, 210-verticalmove);//head, 
         gr.drawLine(540, 210- verticalmove, 520, 250- verticalmove);//40 down, 40 across
         gr.drawLine(500, 210- verticalmove, 520, 250- verticalmove);
