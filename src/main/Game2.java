@@ -90,14 +90,14 @@ public static void main(String[] args){
 								System.out.println(healthHero);
 							}
 							else {
-								hero1.update();
+								hero1.attack();
 								healthMonster-=attkHero;
 								System.out.println(healthMonster);
 
 							}
 						if(healthHero <= 0 || healthMonster <= 0) {
-							atkHero.addActionListener(new ActionFour());
-							
+							//atkHero.addActionListener(new ActionFour());
+							System.exit(0);
 						}
 						}
 						//hello
@@ -109,16 +109,8 @@ public static void main(String[] args){
 			}
 						static class ActionFour implements ActionListener {
 							public void actionPerformed (ActionEvent e) {
-								JFrame character = new JFrame("clicked");
-								character.setVisible(true);
-								character.setSize(200, 500);
-								JLabel label = new JLabel("Choose your Character");
-								JButton warrior = new JButton("Warrior");
-								heroDrawing hero = new heroDrawing();	
-								hero.add(label, BorderLayout.PAGE_START);
-								hero.add(warrior, BorderLayout.PAGE_END);
-								character.add(hero);
-								warrior.addActionListener(new ActionTwo());
+								//JFrame character = new JFrame("clicked");
+								System.exit(0);
 							}
 						}
 

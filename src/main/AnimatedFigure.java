@@ -15,7 +15,7 @@ public int index = 0;
     public int counter = 0;
     int[] horiz = {45,40,35,30};
     int[] vert = {70,75,80,80};
-    private int sleep = 100;
+    
     
     public void start () {
     index = 0;
@@ -105,7 +105,7 @@ public int index = 0;
         gr.drawLine (45 + horizontalmove, 340, 65 + horiz[index] + horizontalmove, 320 + vert[index]);
         try
         {
-            Thread.sleep (sleep);
+            Thread.sleep (100);
         }
         catch (InterruptedException e)
         {
@@ -115,21 +115,13 @@ public int index = 0;
  
     }
     
-    public void update() {
+    public void attack() {
    
     index++;
     horizontalmove+=300;
-    try
-         {
-             Thread.sleep (sleep);
-         }
-         catch (InterruptedException e)
-         {
-         }
-         repaint();
-    if(index == horiz.length)
-            index = 0;
-    }
+		if (index == horiz.length)
+			index = 0;
+	}
     
     public void fireball(){
 //    	int n = 0;
