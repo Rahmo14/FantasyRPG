@@ -33,7 +33,7 @@ public static void main(String[] args){
 	JFrame title = new JFrame("Test");
 	title.setVisible(true);
 	title.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	title.setSize(300, 300);
+	title.setSize(400, 350);
 	JPanel panel = new JPanel();
 	title.add(panel);
 	JButton button = new JButton("Play");
