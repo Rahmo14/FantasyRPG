@@ -56,10 +56,6 @@ public class Monster extends Hero implements PaintComponent {
 		gr.drawLine(600, 150 - y, 680, 120 - y);
 		gr.drawLine(680, 120 - y, 660, 300 - y);
 		gr.drawLine(570, 350 - y, 580, 370 - y);// legs,
-																		// 10
-																		// across,
-																		// 20
-																		// down
 		gr.drawLine(580, 370 - y, 590, 350 - y);
 		gr.drawLine(660, 350 - y, 650, 370 - y);
 		gr.drawLine(650, 370 - y, 640, 350 - y);
@@ -92,6 +88,10 @@ public class Monster extends Hero implements PaintComponent {
 	
 	public void attack() {
 		fireballMove+=435;
+	}
+	
+	public void paintRed(){
+		
 	}
 
 }
