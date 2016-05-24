@@ -95,11 +95,11 @@ public static void main(String[] args){
 								player.attack();
 								healthMonster-=attkHero;
 								System.out.println("Dragon: " + healthMonster);
+								
 
 							}
 						if(healthHero <= 0 || healthMonster <= 0) {
-							//atkHero.addActionListener(new ActionFour());
-							System.exit(0);
+							atkHero.addActionListener(new ActionFour());
 						}
 						}
 						
@@ -111,8 +111,10 @@ public static void main(String[] args){
 			}
 							static class ActionFour implements ActionListener {
 								public void actionPerformed (ActionEvent e) {
-									//JFrame character = new JFrame("clicked");
-									System.exit(0);
+									JFrame end = new JFrame("Test");
+									end.setVisible(true);
+									end.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+									end.setSize(400, 350);
 								}
 							}
 

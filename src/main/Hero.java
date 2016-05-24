@@ -80,9 +80,14 @@ public class Hero implements PaintComponent {
 		else if (x == 0) {
 			x = 10;
 		}
-//		if (xAtk == 300) {
-// 			xAtk = 0;
-//		}
 	}
+
+	@Override
+	public void paintRed() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 }

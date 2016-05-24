@@ -8,4 +8,6 @@ public interface PaintComponent {
 	 public void randomMove();
 	 
 	 public void attack();
+	 
+	 public void paintRed();
 }
