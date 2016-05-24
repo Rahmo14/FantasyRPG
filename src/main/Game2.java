@@ -13,7 +13,7 @@ public class Game2 {
 	
 	static Hero player = new Hero(20, 3);
 	static Monster monster = new Monster(15, 5);
-	static int healthHero = 100;
+	static int healthHero = 1;
 	static int healthMonster = 100;
 	static int attkHero = 3;
 	static int atkDragon = 5;
@@ -98,8 +98,11 @@ public static void main(String[] args){
 								
 
 							}
-						if(healthHero <= 0 || healthMonster <= 0) {
+						if(healthHero <= 0) {
 							atkHero.addActionListener(new ActionFour());
+						}
+						else if (healthMonster<= 0) {
+							atkHero.addActionListener(new ActionFive());
 						}
 						}
 						
@@ -115,6 +118,19 @@ public static void main(String[] args){
 									end.setVisible(true);
 									end.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 									end.setSize(400, 350);
+									HeroWinsDrawing playerWon = new HeroWinsDrawing();
+									end.add(playerWon);
+								}
+							}
+							
+							static class ActionFive implements ActionListener {
+								public void actionPerformed (ActionEvent e) {
+									JFrame end = new JFrame("Test");
+									end.setVisible(true);
+									end.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+									end.setSize(400, 350);
+									//DragonWinsDrawing playerLost = new DragonWinsDrawing();
+									//end.add(playerLost);
 								}
 							}
 
