@@ -19,36 +19,18 @@ public class Monster extends Hero implements PaintComponent {
 		// TODO Auto-generated method stub
 		gr.setColor(new Color(98, 107, 199));
 		gr.drawLine(500, 210 - y, 540, 210 - y);// head,
-		gr.drawLine(540, 210 - y, 520, 250 - y);// 40
-																		// down,
-																		// 40
-																		// across
+		gr.drawLine(540, 210 - y, 520, 250 - y);
 		gr.drawLine(500, 210 - y, 520, 250 - y);
-		gr.drawLine(510, 230 - y, 510, 290 - y);// neck
-																		// line,
-																		// 60
-																		// down
+		gr.drawLine(510, 230 - y, 510, 290 - y);
 		gr.drawLine(530, 230 - y, 530, 290 - y);
 		gr.drawLine(520, 210 - y, 515, 203 - y);// horns
 		gr.drawLine(515, 203 - y, 515, 210 - y);
 		gr.drawLine(520, 210 - y, 525, 203 - y);
 		gr.drawLine(525, 203 - y, 525, 210 - y);
-		gr.drawLine(510, 290 - y, 570, 350 - y);// chest
-																		// line,
-																		// 60
-																		// across,
-																		// 60
-																		// down
+		gr.drawLine(510, 290 - y, 570, 350 - y);
 		gr.drawLine(530, 290 - y, 570, 300 - y);
-		gr.drawRect(570, 300 - y, 90, 50 - y);// body 90
-																	// across,
-																	// 50 down
+		gr.drawRect(570, 300 - y, 90, 50 - y);
 		gr.drawLine(660, 300 - y, 700, 230 - y); // tail
-																		// line
-																		// 70
-																		// up,
-																		// 40
-																		// across
 		gr.drawLine(660, 350 - y, 710, 260 - y);
 		gr.drawLine(700, 230 - y, 720, 150 - y);
 		gr.drawLine(710, 260 - y, 720, 150 - y);

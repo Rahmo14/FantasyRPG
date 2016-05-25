@@ -14,7 +14,7 @@ public class Game3 {
 	static Hero player = new Hero(20, 3);
 	static Monster monster = new Monster(15, 5);
 	static int healthHero = 100;
-	static int healthMonster = 100;
+	static int healthMonster = 1;
 	static int attkHero = 3;
 	static int atkDragon = 5;
 	
@@ -65,7 +65,7 @@ public static void main(String[] args){
 					JFrame game = new JFrame("Game");
 					JButton atkHero = new JButton("Attack");
 					JButton healHero = new JButton("Heal");
-					JButton end = new JButton("End Game");
+						atkHero.setLocation(0, 0);
 					JPanel pane  = new JPanel(new BorderLayout());
 					game.add(pane);
 					game.setVisible(true);
@@ -75,7 +75,7 @@ public static void main(String[] args){
 					AnimatedFigure screen = new AnimatedFigure();
 					screen.components.add(player);
 					screen.components.add(monster);
-					screen.add(atkHero, BorderLayout.PAGE_END);
+					screen.add(atkHero);
 					screen.add(healHero, BorderLayout.PAGE_END);
 				
 					atkHero.addActionListener(new ActionListener () {
@@ -95,12 +95,15 @@ public static void main(String[] args){
 								player.attack();
 								healthMonster-=attkHero;
 								System.out.println("Dragon: " + healthMonster);
+								
 
 							}
-						if(healthHero <= 0 || healthMonster <= 0) {
-							//atkHero.addActionListener(new ActionFour());
-							System.exit(0);
-						}
+								if(healthHero <= 0) {
+									atkHero.addActionListener(new ActionFive());
+								}
+								else if (healthMonster<= 0) {
+									atkHero.addActionListener(new ActionFour());
+								}
 						}
 						
 					});
@@ -111,50 +114,25 @@ public static void main(String[] args){
 			}
 							static class ActionFour implements ActionListener {
 								public void actionPerformed (ActionEvent e) {
-									//JFrame character = new JFrame("clicked");
-									System.exit(0);
+									JFrame end = new JFrame("Test");
+									end.setVisible(true);
+									end.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+									end.setSize(800, 800);
+									HeroWinsDrawing playerWon = new HeroWinsDrawing();
+									end.add(playerWon);
 								}
 							}
-
-						
-//						
-//public static void playGame(Hero x, Monster y) {
-//	int hMonster = y.getHealth();
-//	int aMonster = y.getattack();
-//	int hHero = x.getHealth();
-//	int aHero = x.getattack();
-//	
-//	int potions = 3;
-//	int hpotion = 5;
-//	
-//	Scanner console = new Scanner(System.in);
-//	System.out.println("What would you like to do?  Attack[a]  or  Heal[h] ");
-//	String answer = console.nextLine();
-//	while (hHero > 0 || hMonster > 0) {
-//		if(answer.equals("h")) {
-//			if(potions > 0) {
-//				potions--;
-//				hHero += hpotion;
-//			}
-//			else {
-//				System.out.println("You don't have any more potions left");
-//			}
-//			
-//		}
-//		if(answer.equals("a")) {
-//			if(x.attack() == true){
-//				hMonster -= aHero;
-//			}
-//		}
-//		
-//		System.out.println("Now the dragon attacks you!");
-//		
-//			if(y.attack() == true){
-//				hHero -= aMonster;
-//			}
-//	}
-//}
-
+							
+							static class ActionFive implements ActionListener {
+								public void actionPerformed (ActionEvent e) {
+									JFrame end = new JFrame("Test");
+									end.setVisible(true);
+									end.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+									end.setSize(800, 800);
+									DragonWinsDrawing playerLost = new DragonWinsDrawing();
+									end.add(playerLost);
+								}
+							}
 
 
 public static boolean attack(int random) {

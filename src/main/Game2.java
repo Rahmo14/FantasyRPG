@@ -65,7 +65,7 @@ public static void main(String[] args){
 					JFrame game = new JFrame("Game");
 					JButton atkHero = new JButton("Attack");
 					JButton healHero = new JButton("Heal");
-					
+						atkHero.setLocation(0, 0);
 					JPanel pane  = new JPanel(new BorderLayout());
 					game.add(pane);
 					game.setVisible(true);
@@ -75,7 +75,7 @@ public static void main(String[] args){
 					AnimatedFigure screen = new AnimatedFigure();
 					screen.components.add(player);
 					screen.components.add(monster);
-					screen.add(atkHero, BorderLayout.PAGE_END);
+					screen.add(atkHero);
 					screen.add(healHero, BorderLayout.PAGE_END);
 				
 					atkHero.addActionListener(new ActionListener () {
@@ -117,7 +117,7 @@ public static void main(String[] args){
 									JFrame end = new JFrame("Test");
 									end.setVisible(true);
 									end.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-									end.setSize(400, 350);
+									end.setSize(800, 800);
 									HeroWinsDrawing playerWon = new HeroWinsDrawing();
 									end.add(playerWon);
 								}
@@ -128,7 +128,7 @@ public static void main(String[] args){
 									JFrame end = new JFrame("Test");
 									end.setVisible(true);
 									end.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-									end.setSize(400, 350);
+									end.setSize(800, 800);
 									DragonWinsDrawing playerLost = new DragonWinsDrawing();
 									end.add(playerLost);
 								}
