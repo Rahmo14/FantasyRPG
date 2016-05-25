@@ -49,11 +49,11 @@ public static void main(String[] args){
 		public void actionPerformed (ActionEvent e) {
 			JFrame character = new JFrame("clicked");
 			character.setVisible(true);
-			character.setSize(200, 500);
-			JLabel label = new JLabel("Choose your Character");
-			JButton warrior = new JButton("Warrior");
+			character.setSize(800, 800);
+			//JLabel label = new JLabel("Choose your Character");
+			JButton warrior = new JButton("Let's play");
 			heroDrawing hero = new heroDrawing();	
-			hero.add(label, BorderLayout.PAGE_START);
+			//hero.add(label, BorderLayout.PAGE_START);
 			hero.add(warrior, BorderLayout.PAGE_END);
 			character.add(hero);
 			warrior.addActionListener(new ActionTwo());
