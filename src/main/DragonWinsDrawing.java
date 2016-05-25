@@ -20,11 +20,16 @@ public class DragonWinsDrawing extends JPanel {
 		
 		
 		//ashes
+		gr.drawPolygon(new int[] {50, 70, 70}, new int[] {300, 190, 300}, 3);
 		
 		
-		
+		//gr.drawPolygon(new int[] {10, 20, 30}, new int[] {100, 20, 100}, 3);
+
+
+		//gr.drawPolygon(new int[] {400, 70, 200}, new int[] {200, 30, 200}, 3);
+		//gr.drawPolygon(int[] , int[] yPoints, int nPoints)
+	}
 		
 		
 
 	}
-}
