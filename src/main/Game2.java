@@ -13,7 +13,7 @@ public class Game2 {
 	
 	static Hero player = new Hero(20, 3);
 	static Monster monster = new Monster(15, 5);
-	static int healthHero = 100;
+	static int healthHero = 1;
 	static int healthMonster = 100;
 	static int attkHero = 3;
 	static int atkDragon = 5;
@@ -129,50 +129,10 @@ public static void main(String[] args){
 									end.setVisible(true);
 									end.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 									end.setSize(400, 350);
-									//DragonWinsDrawing playerLost = new DragonWinsDrawing();
-									//end.add(playerLost);
+									DragonWinsDrawing playerLost = new DragonWinsDrawing();
+									end.add(playerLost);
 								}
 							}
-
-						
-//						
-//public static void playGame(Hero x, Monster y) {
-//	int hMonster = y.getHealth();
-//	int aMonster = y.getattack();
-//	int hHero = x.getHealth();
-//	int aHero = x.getattack();
-//	
-//	int potions = 3;
-//	int hpotion = 5;
-//	
-//	Scanner console = new Scanner(System.in);
-//	System.out.println("What would you like to do?  Attack[a]  or  Heal[h] ");
-//	String answer = console.nextLine();
-//	while (hHero > 0 || hMonster > 0) {
-//		if(answer.equals("h")) {
-//			if(potions > 0) {
-//				potions--;
-//				hHero += hpotion;
-//			}
-//			else {
-//				System.out.println("You don't have any more potions left");
-//			}
-//			
-//		}
-//		if(answer.equals("a")) {
-//			if(x.attack() == true){
-//				hMonster -= aHero;
-//			}
-//		}
-//		
-//		System.out.println("Now the dragon attacks you!");
-//		
-//			if(y.attack() == true){
-//				hHero -= aMonster;
-//			}
-//	}
-//}
-
 
 
 public static boolean attack(int random) {
