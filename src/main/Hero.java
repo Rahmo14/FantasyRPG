@@ -9,7 +9,7 @@ public class Hero implements PaintComponent {
 	int xAtk = 0; //Horizontal Move counter for attack() (Also found in the randomMove() method
 	int index = 0;
 	int[] horiz = {45,40,35,30};
-
+	int ySword = 0;
 
 	public Hero(int health, int attack) {
 		health = this.myhealth;
@@ -43,13 +43,13 @@ public class Hero implements PaintComponent {
 		gr.drawLine(0, 400, 750, 400); // Horizontal Line
 		gr.drawOval(20 + x + xAtk, 200, 50, 50); // Head
 		gr.drawLine(45 + x + xAtk, 250, 45 + x + xAtk, 340); // Body
-		gr.drawLine(45 + x + xAtk, 300, 80 + x + xAtk, 265); // Arm1
-		gr.drawLine(45 + x + xAtk, 300, 80 + x + xAtk, 300); // Arm2
+		gr.drawLine(45 + x + xAtk, 300, 80 + x + xAtk, 265 + ySword); // Arm holding sword
+		gr.drawLine(45 + x + xAtk, 300, 80 + x + xAtk, 300); // Arm holding shield
 		gr.drawLine(45 + x + xAtk, 340, 45 + x + xAtk, 400); // Straight								
-		gr.drawLine (45 + x + xAtk, 340, 65 + x + xAtk, 400); 
-		gr.drawOval(77 + x + xAtk, 273, 6, 6);       // \
-		gr.drawLine(80 + x + xAtk, 273, 80 + x + xAtk, 170); // Sword
-		gr.drawLine(70 + x + xAtk, 263, 90 + x + xAtk, 263); // /
+		gr.drawLine(45 + x + xAtk, 340, 65 + x + xAtk, 400); 
+		gr.drawOval(77 + x + xAtk, 273 + ySword, 6, 6);       // \
+		gr.drawLine(80 + x + xAtk, 273 + 2*ySword, 80 + x + xAtk + ySword, 170 + ySword); // Sword
+		gr.drawLine(70 + x + xAtk, 263 + ySword, 90 + x + xAtk, 263 + ySword); // /
 		gr.drawOval(70 + x + xAtk, 290, 20, 20); // Shield
 		gr.drawOval(57 + x + xAtk, 277, 45, 45); // Shield
 		
@@ -57,12 +57,12 @@ public class Hero implements PaintComponent {
 
 	public void attack() {
 		index++;
-	    xAtk+=300;
+	    xAtk+=400;
 	    new java.util.Timer().schedule( 
 	            new java.util.TimerTask() {
 	                @Override
 	                public void run() {
-	                	 if (xAtk == 300) {
+	                	 if (xAtk == 400) {
 	             			xAtk = 0;
 	             		}
 	                }
@@ -74,12 +74,21 @@ public class Hero implements PaintComponent {
 	@Override
 	public void randomMove() {
 		// TODO Auto-generated method stub
-		if (x == 10) {
-			x = 0;
-		}
-		else if (x == 0) {
-			x = 10;
-		}
+//		if (x == 10) {
+//			x = 0;
+//		}
+//		else if (x == 0) {
+//			x = 10;
+//		}
+		
+		if (xAtk == 400){
+	    	if (ySword == 10) {
+				ySword = 0;
+			}
+			else if (ySword == 0) {
+				ySword = 10;
+			}
+	    }
 	}
 
 	@Override

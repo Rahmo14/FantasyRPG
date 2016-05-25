@@ -13,7 +13,7 @@ public class Game2 {
 	
 	static Hero player = new Hero(20, 3);
 	static Monster monster = new Monster(15, 5);
-	static int healthHero = 1;
+	static int healthHero = 100;
 	static int healthMonster = 100;
 	static int attkHero = 3;
 	static int atkDragon = 5;
@@ -65,7 +65,6 @@ public static void main(String[] args){
 					JFrame game = new JFrame("Game");
 					JButton atkHero = new JButton("Attack");
 					JButton healHero = new JButton("Heal");
-						atkHero.setLocation(0, 0);
 					JPanel pane  = new JPanel(new BorderLayout());
 					game.add(pane);
 					game.setVisible(true);
@@ -75,13 +74,17 @@ public static void main(String[] args){
 					AnimatedFigure screen = new AnimatedFigure();
 					screen.components.add(player);
 					screen.components.add(monster);
-					screen.add(atkHero);
+					screen.add(atkHero, BorderLayout.PAGE_END);
 					screen.add(healHero, BorderLayout.PAGE_END);
 				
+					JLabel hpHero = new JLabel("Your health: " + healthHero + "     ");
+					JLabel hpMonster = new JLabel("Dragon's health: " + healthMonster);
+					screen.add(hpHero);
+					screen.add(hpMonster);
+					
 					atkHero.addActionListener(new ActionListener () {
 						public void actionPerformed(ActionEvent e) {	
 							int rand = player.random();
-							JLabel label = new JLabel("You missed the attack!");
 							boolean heroAttack = attack(rand);
 							
 			// The actual game begins here ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬				
@@ -90,13 +93,13 @@ public static void main(String[] args){
 								monster.attack();
 								healthHero-=atkDragon;
 								System.out.println("Hero: " + healthHero);
+								hpHero.setText("Your health: " + healthHero + "     ");
 							}
 							else {
 								player.attack();
 								healthMonster-=attkHero;
 								System.out.println("Dragon: " + healthMonster);
-								
-
+								hpMonster.setText("Dragon's health: " + healthMonster);
 							}
 								if(healthHero <= 0) {
 									atkHero.addActionListener(new ActionFive());
