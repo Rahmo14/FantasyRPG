@@ -65,7 +65,7 @@ public static void main(String[] args){
 					JFrame game = new JFrame("Game");
 					JButton atkHero = new JButton("Attack");
 					JButton healHero = new JButton("Heal");
-					JButton end = new JButton("End Game");
+					
 					JPanel pane  = new JPanel(new BorderLayout());
 					game.add(pane);
 					game.setVisible(true);
