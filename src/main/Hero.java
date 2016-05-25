@@ -74,14 +74,15 @@ public class Hero implements PaintComponent {
 	@Override
 	public void randomMove() {
 		// TODO Auto-generated method stub
-//		if (x == 10) {
-//			x = 0;
-//		}
-//		else if (x == 0) {
-//			x = 10;
-//		}
+		if (x == 10) {
+			x = 0;
+		}
+		else if (x == 0) {
+			x = 10;
+		}
 		
 		if (xAtk == 400){
+			x = 0;
 	    	if (ySword == 10) {
 				ySword = 0;
 			}
