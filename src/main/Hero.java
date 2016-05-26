@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Hero implements PaintComponent {
@@ -10,6 +11,7 @@ public class Hero implements PaintComponent {
 	int index = 0;
 	int[] horiz = {45,40,35,30};
 	int ySword = 0;
+	Color color = (new Color(0,0,0));
 
 	public Hero(int health, int attack) {
 		health = this.myhealth;
@@ -40,7 +42,9 @@ public class Hero implements PaintComponent {
 	@Override
 	public void paintComponent(Graphics gr) {
 		// TODO Auto-generated method stub
+		gr.setColor(new Color(0,0,0));
 		gr.drawLine(0, 400, 750, 400); // Horizontal Line
+		gr.setColor(color);
 		gr.drawOval(20 + x + xAtk, 200, 50, 50); // Head
 		gr.drawLine(45 + x + xAtk, 250, 45 + x + xAtk, 340); // Body
 		gr.drawLine(45 + x + xAtk, 300, 80 + x + xAtk, 265 + ySword); // Arm holding sword
@@ -94,7 +98,16 @@ public class Hero implements PaintComponent {
 
 	@Override
 	public void paintRed() {
-		// TODO Auto-generated method stub
+		color = (new Color(255,0,0));
+		new java.util.Timer().schedule( 
+	            new java.util.TimerTask() {
+	                @Override
+	                public void run() {
+	                	 color = new Color(0,0,0);
+	                }
+	            }, 
+	            200 
+	    );
 		
 	}
 

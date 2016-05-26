@@ -13,10 +13,11 @@ public class Game2 {
 	
 	static Hero player = new Hero(20, 3);
 	static Monster monster = new Monster(15, 5);
-	static int healthHero = 50;
-	static int healthMonster = 50;
+	static int healthHero = 100;
+	static int healthMonster = 100;
 	static int attkHero = 3;
 	static int atkDragon = 5;
+	static JLabel hpHero = new JLabel("Your health: " + healthHero + "     ");
 	
 public static void main(String[] args){
 //	Scanner console = new Scanner(System.in);
@@ -76,8 +77,8 @@ public static void main(String[] args){
 					screen.components.add(monster);
 					screen.add(atkHero, BorderLayout.PAGE_END);
 					screen.add(healHero, BorderLayout.PAGE_END);
-				
-					JLabel hpHero = new JLabel("Your health: " + healthHero + "     ");
+					healHero.addActionListener(new ActionHeal());
+					
 					JLabel hpMonster = new JLabel("Dragon's health: " + healthMonster);
 					screen.add(hpHero);
 					screen.add(hpMonster);
@@ -94,12 +95,14 @@ public static void main(String[] args){
 								healthHero-=atkDragon;
 								System.out.println("Hero: " + healthHero);
 								hpHero.setText("Your health: " + healthHero + "     ");
+								player.paintRed();
 							}
 							else {
 								player.attack();
 								healthMonster-=attkHero;
 								System.out.println("Dragon: " + healthMonster);
 								hpMonster.setText("Dragon's health: " + healthMonster);
+								monster.paintRed();
 							}
 								if(healthHero <= 0) {
 									atkHero.addActionListener(new ActionFive());
@@ -131,9 +134,16 @@ public static void main(String[] args){
 									JFrame end = new JFrame("Test");
 									end.setVisible(true);
 									end.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-									end.setSize(400, 350);
+									end.setSize(800, 800);
 									DragonWinsDrawing playerLost = new DragonWinsDrawing();
 									end.add(playerLost);
+								}
+							}
+							
+							static class ActionHeal implements ActionListener {
+								public void actionPerformed (ActionEvent e) {
+										healthHero+=10;
+										hpHero.setText("Your health: " + healthHero + "     ");
 								}
 							}
 
