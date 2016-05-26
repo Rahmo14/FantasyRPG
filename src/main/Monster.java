@@ -82,7 +82,7 @@ public class Monster extends Hero implements PaintComponent {
 	                	color = new Color(98, 107, 199);
 	                }
 	            }, 
-	            200 
+	            1000 
 	    );
 	}
 
