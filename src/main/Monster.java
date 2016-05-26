@@ -8,6 +8,7 @@ public class Monster extends Hero implements PaintComponent {
 	int fireballMove = 0;
 	int count = 0; // vertical move counter
 	int counter = 0;
+	Color color = new Color(98, 107, 199);
 
 	public Monster(int health, int attack) {
 		super(health, attack);
@@ -17,7 +18,7 @@ public class Monster extends Hero implements PaintComponent {
 	@Override
 	public void paintComponent(Graphics gr) {
 		// TODO Auto-generated method stub
-		gr.setColor(new Color(98, 107, 199));
+		gr.setColor(color);
 		gr.drawLine(500, 210 - y, 540, 210 - y);// head,
 		gr.drawLine(540, 210 - y, 520, 250 - y);
 		gr.drawLine(500, 210 - y, 520, 250 - y);
@@ -73,7 +74,16 @@ public class Monster extends Hero implements PaintComponent {
 	}
 	
 	public void paintRed(){
-		
+		color = new Color(255, 0, 0);
+		new java.util.Timer().schedule( 
+	            new java.util.TimerTask() {
+	                @Override
+	                public void run() {
+	                	color = new Color(98, 107, 199);
+	                }
+	            }, 
+	            200 
+	    );
 	}
 
 }

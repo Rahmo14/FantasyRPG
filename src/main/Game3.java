@@ -95,12 +95,14 @@ public static void main(String[] args){
 								healthHero-=atkDragon;
 								System.out.println("Hero: " + healthHero);
 								hpHero.setText("Your health: " + healthHero + "     ");
+								player.paintRed();
 							}
 							else {
 								player.attack();
 								healthMonster-=attkHero;
 								System.out.println("Dragon: " + healthMonster);
 								hpMonster.setText("Dragon's health: " + healthMonster);
+								monster.paintRed();
 							}
 								if(healthHero <= 0) {
 									atkHero.addActionListener(new ActionFive());
