@@ -17,6 +17,7 @@ public class Game3 {
 	static int healthMonster = 100;
 	static int attkHero = 3;
 	static int atkDragon = 5;
+	static JLabel hpHero = new JLabel("Your health: " + healthHero + "     ");
 	
 public static void main(String[] args){
 //	Scanner console = new Scanner(System.in);
@@ -76,8 +77,8 @@ public static void main(String[] args){
 					screen.components.add(monster);
 					screen.add(atkHero, BorderLayout.PAGE_END);
 					screen.add(healHero, BorderLayout.PAGE_END);
-				
-					JLabel hpHero = new JLabel("Your health: " + healthHero + "     ");
+					healHero.addActionListener(new ActionHeal());
+					
 					JLabel hpMonster = new JLabel("Dragon's health: " + healthMonster);
 					screen.add(hpHero);
 					screen.add(hpMonster);
@@ -134,6 +135,13 @@ public static void main(String[] args){
 									end.setSize(800, 800);
 									DragonWinsDrawing playerLost = new DragonWinsDrawing();
 									end.add(playerLost);
+								}
+							}
+							
+							static class ActionHeal implements ActionListener {
+								public void actionPerformed (ActionEvent e) {
+										healthHero+=10;
+										hpHero.setText("Your health: " + healthHero + "     ");
 								}
 							}
 
