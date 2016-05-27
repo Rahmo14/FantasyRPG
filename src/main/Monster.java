@@ -42,11 +42,11 @@ public class Monster extends Hero implements PaintComponent {
 		gr.drawLine(580, 370 - y, 590, 350 - y);
 		gr.drawLine(660, 350 - y, 650, 370 - y);
 		gr.drawLine(650, 370 - y, 640, 350 - y);
-		
-	//Fireball drawing begins	
+
+		// Fireball drawing begins
 		gr.setColor(new Color(204, 102, 0));
 		gr.fillOval(515 - fireballMove, 253 - y, 15, 15);
-		//gr.drawOval(515 - fireballMove, 253 - y, 15, 15);// fireball
+		// gr.drawOval(515 - fireballMove, 253 - y, 15, 15);// fireball
 	}
 
 	public void verticalMove() {
@@ -64,26 +64,30 @@ public class Monster extends Hero implements PaintComponent {
 		if (y == 5) {
 			y = -5;
 		}
-		if (fireballMove == 435) {
-			fireballMove = 0;
-		}
+		new java.util.Timer().schedule(new java.util.TimerTask() {
+			@Override
+			public void run() {
+				if (fireballMove == 435) {
+					fireballMove = 0;
+				}
+			}
+		}, 1000);
+
 	}
-	
+
 	public void attack() {
-		fireballMove+=435;
+		fireballMove += 435;
+
 	}
-	
-	public void paintRed(){
+
+	public void paintRed() {
 		color = new Color(255, 0, 0);
-		new java.util.Timer().schedule( 
-	            new java.util.TimerTask() {
-	                @Override
-	                public void run() {
-	                	color = new Color(98, 107, 199);
-	                }
-	            }, 
-	            1000 
-	    );
+		new java.util.Timer().schedule(new java.util.TimerTask() {
+			@Override
+			public void run() {
+				color = new Color(98, 107, 199);
+			}
+		}, 1000);
 	}
 
 }
