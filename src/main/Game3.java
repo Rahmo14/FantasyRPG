@@ -73,6 +73,7 @@ public static void main(String[] args){
 					
 				//Create object where every figure will be drawn	
 					AnimatedFigure screen = new AnimatedFigure();
+					
 					screen.components.add(player);
 					screen.components.add(monster);
 					screen.add(atkHero, BorderLayout.PAGE_END);
