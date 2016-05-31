@@ -43,7 +43,7 @@ public class heroDrawing extends JPanel {
 	         gr.fillOval(570, 70, 80, 80);
 	         gr.fillOval(550, 110, 60, 60);
 	         
-	         gr.setColor(new Color(201,189,21));
+	         gr.setColor(new Color(201,189,21));//sun
 	         gr.fillOval(270,30,100,100);
 	 }    
 }
