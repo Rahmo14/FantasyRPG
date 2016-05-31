@@ -2,6 +2,9 @@ package main;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class Monster extends Hero implements PaintComponent {
 	int y = 0;
@@ -9,6 +12,7 @@ public class Monster extends Hero implements PaintComponent {
 	int count = 0; // vertical move counter
 	int counter = 0;
 	Color color = new Color(98, 107, 199);
+	Timer timer = new Timer();
 
 	public Monster(int health, int attack) {
 		super(health, attack);
@@ -85,5 +89,5 @@ public class Monster extends Hero implements PaintComponent {
 	            1000 
 	    );
 	}
-
+	
 }
