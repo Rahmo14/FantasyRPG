@@ -25,7 +25,25 @@ public class heroDrawing extends JPanel {
 	         gr.fillOval(120, 190, 60, 60);        //Shield
 	         gr.setColor(new Color(97, 60, 6));
 	         gr.fillOval(135, 206, 30, 30);
-	       
-
+	         
+	         gr.setColor(new Color(17,92,32)); //grass
+	         gr.fillRect(0, 400, 800, 450);
+	         
+	         gr.setColor(new Color(80,58,8));//tree trunk
+	         gr.fillRect(600, 200, 100, 200);
+	         
+	         gr.setColor(new Color(9,159,9)); //leaves
+	         gr.fillOval(600,150,80,80);
+	         gr.fillOval(650, 150, 80, 80);
+	         gr.fillOval(550,150,80,80);
+	         gr.fillOval(670, 120, 100, 100);
+	         gr.fillOval(570, 120, 100, 100);
+	         gr.fillOval(620, 120, 100, 100);
+	         gr.fillOval(620, 70, 100, 100);
+	         gr.fillOval(570, 70, 80, 80);
+	         gr.fillOval(550, 110, 60, 60);
+	         
+	         gr.setColor(new Color(201,189,21));
+	         gr.fillOval(270,30,100,100);
 	 }    
 }
