@@ -54,10 +54,14 @@ public class Hero implements PaintComponent {
 		gr.drawOval(77 + x + xAtk, 273 + ySword, 6, 6);       // \
 		gr.drawLine(80 + x + xAtk, 273 + 2*ySword, 80 + x + xAtk + ySword, 170 + ySword); // Sword
 		gr.drawLine(70 + x + xAtk, 263 + ySword, 90 + x + xAtk, 263 + ySword); // /
-		gr.drawOval(70 + x + xAtk, 290, 20, 20); // Shield
-		gr.drawOval(57 + x + xAtk, 277, 45, 45); // Shield
+		
+		gr.setColor(new Color(97, 60, 6));
+		gr.fillOval(70 + x + xAtk, 290, 20, 20); // Shield
+		gr.setColor(new Color(145, 132, 114));
+		gr.fillOval(57 + x + xAtk, 277, 45, 45); // Shield
 		
 	}
+
 
 	public void attack() {
 		index++;
@@ -110,7 +114,5 @@ public class Hero implements PaintComponent {
 	    );
 		
 	}
-
-	
 
 }

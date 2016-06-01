@@ -2,6 +2,9 @@ package main;
 
 import java.awt.GridLayout;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -91,7 +94,7 @@ public static void main(String[] args){
 							int rand = player.random();
 							boolean heroAttack = attack(rand);
 							
-			// The actual game begins here ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬				
+			// The actual game begins here ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬	
 							if (heroAttack == false) {
 								//hero1.add(label, BorderLayout.PAGE_START);
 								monster.attack();

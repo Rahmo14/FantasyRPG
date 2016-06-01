@@ -13,7 +13,7 @@ public class Game3 {
 	
 	static Hero player = new Hero(20, 3);
 	static Monster monster = new Monster(15, 5);
-	static int healthHero = 100;
+	static int healthHero = 1;
 	static int healthMonster = 100;
 	static int attkHero = 3;
 	static int atkDragon = 5;
@@ -64,7 +64,7 @@ public static void main(String[] args){
 			static class ActionTwo implements ActionListener {
 				public void actionPerformed(ActionEvent e) {
 					JFrame game = new JFrame("Game");
-					JButton atkHero = new JButton("Attack");
+					JButton swordHero = new JButton("Sword");
 					JButton healHero = new JButton("Heal");
 					JPanel pane  = new JPanel(new BorderLayout());
 					game.add(pane);
@@ -73,9 +73,10 @@ public static void main(String[] args){
 					
 				//Create object where every figure will be drawn	
 					AnimatedFigure screen = new AnimatedFigure();
+					
 					screen.components.add(player);
 					screen.components.add(monster);
-					screen.add(atkHero, BorderLayout.PAGE_END);
+					screen.add(swordHero, BorderLayout.PAGE_END);
 					screen.add(healHero, BorderLayout.PAGE_END);
 					healHero.addActionListener(new ActionHeal());
 					
@@ -83,12 +84,13 @@ public static void main(String[] args){
 					screen.add(hpHero);
 					screen.add(hpMonster);
 					
-					atkHero.addActionListener(new ActionListener () {
+					
+	// The actual game begins here ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬	
+				//Attack with sword	
+					swordHero.addActionListener(new ActionListener () {
 						public void actionPerformed(ActionEvent e) {	
 							int rand = player.random();
-							boolean heroAttack = attack(rand);
-							
-			// The actual game begins here ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬				
+							boolean heroAttack = attack(rand);			
 							if (heroAttack == false) {
 								//hero1.add(label, BorderLayout.PAGE_START);
 								monster.attack();
@@ -105,16 +107,15 @@ public static void main(String[] args){
 								monster.paintRed();
 							}
 								if(healthHero <= 0) {
-									atkHero.addActionListener(new ActionFive());
+									swordHero.addActionListener(new ActionFive());
 								}
 								else if (healthMonster<= 0) {
-									atkHero.addActionListener(new ActionFour());
+									swordHero.addActionListener(new ActionFour());
 								}
 						}
 						
 					});
-					
-					
+				
 					game.add(screen);
 				}
 			}
@@ -134,7 +135,7 @@ public static void main(String[] args){
 									JFrame end = new JFrame("Test");
 									end.setVisible(true);
 									end.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-									end.setSize(800, 800);
+									end.setSize(800, 400);
 									DragonWinsDrawing playerLost = new DragonWinsDrawing();
 									end.add(playerLost);
 								}
@@ -142,7 +143,11 @@ public static void main(String[] args){
 							
 							static class ActionHeal implements ActionListener {
 								public void actionPerformed (ActionEvent e) {
-										healthHero+=10;
+									int maxHealth = 30;
+									int heal = 10;
+									if ( healthHero <= 30) {
+										healthHero+=heal;
+									}
 										hpHero.setText("Your health: " + healthHero + "     ");
 								}
 							}
