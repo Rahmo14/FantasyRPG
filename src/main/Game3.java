@@ -64,7 +64,7 @@ public static void main(String[] args){
 			static class ActionTwo implements ActionListener {
 				public void actionPerformed(ActionEvent e) {
 					JFrame game = new JFrame("Game");
-					JButton atkHero = new JButton("Attack");
+					JButton swordHero = new JButton("Sword");
 					JButton healHero = new JButton("Heal");
 					JPanel pane  = new JPanel(new BorderLayout());
 					game.add(pane);
@@ -76,7 +76,7 @@ public static void main(String[] args){
 					
 					screen.components.add(player);
 					screen.components.add(monster);
-					screen.add(atkHero, BorderLayout.PAGE_END);
+					screen.add(swordHero, BorderLayout.PAGE_END);
 					screen.add(healHero, BorderLayout.PAGE_END);
 					healHero.addActionListener(new ActionHeal());
 					
@@ -84,12 +84,13 @@ public static void main(String[] args){
 					screen.add(hpHero);
 					screen.add(hpMonster);
 					
-					atkHero.addActionListener(new ActionListener () {
+					
+	// The actual game begins here ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬	
+				//Attack with sword	
+					swordHero.addActionListener(new ActionListener () {
 						public void actionPerformed(ActionEvent e) {	
 							int rand = player.random();
-							boolean heroAttack = attack(rand);
-							
-			// The actual game begins here ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬				
+							boolean heroAttack = attack(rand);			
 							if (heroAttack == false) {
 								//hero1.add(label, BorderLayout.PAGE_START);
 								monster.attack();
@@ -106,16 +107,15 @@ public static void main(String[] args){
 								monster.paintRed();
 							}
 								if(healthHero <= 0) {
-									atkHero.addActionListener(new ActionFive());
+									swordHero.addActionListener(new ActionFive());
 								}
 								else if (healthMonster<= 0) {
-									atkHero.addActionListener(new ActionFour());
+									swordHero.addActionListener(new ActionFour());
 								}
 						}
 						
 					});
-					
-					
+				
 					game.add(screen);
 				}
 			}

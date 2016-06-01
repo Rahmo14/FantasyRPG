@@ -62,6 +62,7 @@ public class Hero implements PaintComponent {
 		
 	}
 
+
 	public void attack() {
 		index++;
 	    xAtk+=400;
@@ -113,7 +114,5 @@ public class Hero implements PaintComponent {
 	    );
 		
 	}
-
-	
 
 }

@@ -7,6 +7,7 @@ import java.util.TimerTask;
 
 
 public class Monster extends Hero implements PaintComponent {
+	int xTail = 0;
 	int y = 0;
 	int fireballMove = 0;
 	int count = 0; // vertical move counter
@@ -35,10 +36,10 @@ public class Monster extends Hero implements PaintComponent {
 		gr.drawLine(510, 290 - y, 570, 350 - y);
 		gr.drawLine(530, 290 - y, 570, 300 - y);
 		gr.drawRect(570, 300 - y, 90, 50 - y);
-		gr.drawLine(660, 300 - y, 700, 230 - y); // tail
-		gr.drawLine(660, 350 - y, 710, 260 - y);
-		gr.drawLine(700, 230 - y, 720, 150 - y);
-		gr.drawLine(710, 260 - y, 720, 150 - y);
+		gr.drawLine(660, 300 - y, 700 + xTail, 230 - y); // tail
+		gr.drawLine(660, 350 - y, 710 + xTail, 260 - y);
+		gr.drawLine(700 + xTail, 230 - y, 720 + xTail, 150 - y);
+		gr.drawLine(710 + xTail, 260 - y, 720 + xTail, 150 - y);
 		gr.drawLine(570, 300 - y, 600, 150 - y);// wing
 		gr.drawLine(600, 150 - y, 680, 120 - y);
 		gr.drawLine(680, 120 - y, 660, 300 - y);
@@ -77,6 +78,11 @@ public class Monster extends Hero implements PaintComponent {
 			}
 		}, 1000);
 
+		xTail++;
+		if(xTail == 6) {
+			xTail = 0;
+		}
+			
 	}
 
 	public void attack() {
