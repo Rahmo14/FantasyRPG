@@ -9,6 +9,9 @@ public class heroDrawing extends JPanel {
 	 @Override
 	    public void paintComponent(Graphics gr) {    
 	    	super.paintComponent(gr);
+	    	gr.setColor(new Color(162,224,243));
+	         gr.fillRect(0, 0, 800, 400);
+	         gr.setColor(new Color(0,0,0));
 	         gr.drawOval (50, 100, 80, 80);  // Head
 	         gr.drawLine (90, 180, 90, 325); // Body
 	         gr.drawLine (90, 220, 150, 220); // Right arm
@@ -45,5 +48,7 @@ public class heroDrawing extends JPanel {
 	         
 	         gr.setColor(new Color(201,189,21));//sun
 	         gr.fillOval(270,30,100,100);
+	         
+	         
 	 }    
 }

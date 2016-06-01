@@ -41,6 +41,7 @@ public static void main(String[] args){
 	titleDrawing title1 = new titleDrawing();
 	title1.add(button, BorderLayout.PAGE_START);
 	title.add(title1);
+	title1.horizontalmove();
 	button.addActionListener(new Action());
 	
 }
@@ -70,9 +71,11 @@ public static void main(String[] args){
 					game.add(pane);
 					game.setVisible(true);
 					game.setSize(750, 480);
+					Background background = new Background();
 					
 				//Create object where every figure will be drawn	
 					AnimatedFigure screen = new AnimatedFigure();
+					screen.components.add(background);
 					screen.components.add(player);
 					screen.components.add(monster);
 					screen.add(atkHero, BorderLayout.PAGE_END);
