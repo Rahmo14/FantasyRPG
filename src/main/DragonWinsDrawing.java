@@ -24,8 +24,12 @@ public class DragonWinsDrawing extends JPanel {
 		gr.fillPolygon(new int[] {20, 60, 100}, new int[] {300, 190, 300}, 3);
 		  gr.drawLine (60, 210, 60, 60);      //    > Sword
 	         gr.drawLine (35, 80, 83, 80); 
+	         
+	         gr.setColor(new Color(90, 58, 3));// /
+	         gr.fillOval(45, 40, 30, 30);
 	         gr.setColor(new Color(226, 192, 82));// /
-	         gr.fillOval(55, 50, 10, 10);
+	         gr.fillOval(50, 45, 20, 20);
+
 
 		
 	         gr.setColor(new Color(21, 4, 144));
