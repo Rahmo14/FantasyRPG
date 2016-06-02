@@ -28,13 +28,26 @@ public class DragonWinsDrawing extends JPanel {
 	         gr.fillOval(55, 50, 10, 10);
 
 		
-		gr.setColor(new Color(98, 107, 199));
-		gr.drawPolygon(new int[] {300, 500, 500}, new int[] {150, 50, 150}, 3);
-		gr.drawLine (500, 125, 800, 125); 
-		gr.drawLine (435, 200, 800, 200); 
-		gr.drawPolygon(new int[] {300, 400, 500}, new int[] {200, 225, 150}, 3);
-		 gr.setColor(new Color(182, 82, 15));
-		gr.fillOval(300, 500, 40, 40);
+	         gr.setColor(new Color(21, 4, 144));
+	 		//                        x1   x2  x3               y1  y2   y3
+			gr.fillPolygon(new int[] {300, 400, 400}, new int[] {100, 25, 100}, 3);
+			
+			gr.fillPolygon(new int[] {400, 400, 415}, new int[] {50, 25, 37}, 3);
+			gr.fillPolygon(new int[] {400, 400, 430}, new int[] {100, 50, 100}, 3);
+			gr.fillPolygon(new int[] {370, 405, 475, 430}, new int[] {100, 200, 200, 100}, 4);
+			gr.fillPolygon(new int[] {405, 475, 475}, new int[] {200, 200, 300}, 3);
+			gr.fillPolygon(new int[] {475, 475, 515, 515}, new int[] {200, 300, 350, 200}, 4);
+			gr.fillPolygon(new int[] {515, 515, 700, 700}, new int[] {200, 350, 350, 200}, 4);
+			gr.fillPolygon(new int[] {700, 700, 800, 800}, new int[] {200, 350, 300, 150}, 4);
+			gr.fillPolygon(new int[] {560, 515, 700, 720}, new int[] {0, 200, 200, 0}, 4);//wing
+
+
+
+
+
+
+			
+
 		
 	}
 		
