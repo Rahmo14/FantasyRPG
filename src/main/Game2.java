@@ -148,7 +148,11 @@ public static void main(String[] args){
 							
 							static class ActionHeal implements ActionListener {
 								public void actionPerformed (ActionEvent e) {
-										healthHero+=10;
+									//int maxHealth = 30;
+									int heal = 10;
+									if ( healthHero <= 30) {
+										healthHero+=heal;
+									}
 										hpHero.setText("Your health: " + healthHero + "     ");
 								}
 							}

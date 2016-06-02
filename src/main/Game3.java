@@ -70,10 +70,10 @@ public static void main(String[] args){
 					game.add(pane);
 					game.setVisible(true);
 					game.setSize(750, 480);
-					
+					Background background = new Background();
 				//Create object where every figure will be drawn	
 					AnimatedFigure screen = new AnimatedFigure();
-					
+					screen.components.add(background);
 					screen.components.add(player);
 					screen.components.add(monster);
 					screen.add(swordHero, BorderLayout.PAGE_END);
@@ -143,7 +143,7 @@ public static void main(String[] args){
 							
 							static class ActionHeal implements ActionListener {
 								public void actionPerformed (ActionEvent e) {
-									int maxHealth = 30;
+									//int maxHealth = 30;
 									int heal = 10;
 									if ( healthHero <= 30) {
 										healthHero+=heal;
