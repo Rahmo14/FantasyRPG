@@ -7,10 +7,15 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class HeroWinsDrawing extends JPanel {
+	
 	public void paintComponent(Graphics gr) {
     super.paintComponent(gr);
     gr.setColor(new Color(240,237,152));
     gr.fillRect(0, 0, 1000, 1000);
+    gr.setColor(new Color(158,92,18));//ground
+	gr.fillRect(0, 415, 800, 400);
+	gr.setColor(new Color(210,152,51));
+	gr.fillRect(0, 415, 800, 70);
     gr.setColor(new Color(0, 0, 0));
     gr.drawOval (50, 100, 80, 80);  // Head
     gr.drawLine (90, 180, 90, 325); // Body
@@ -50,10 +55,10 @@ public class HeroWinsDrawing extends JPanel {
    
     gr.setFont(new Font("serf", Font.BOLD, 68));
 	gr.setColor(new Color(52, 191, 206));
-	gr.drawString("VICTORY!", 430, 175);
+	gr.drawString("VICTORY!", 400, 175);
 	gr.setColor(new Color(56, 125, 10));
-	gr.drawString("You won!", 430, 270 );
+	gr.drawString("You won!", 400, 270 );
     
-    
+	
 	}
 }
