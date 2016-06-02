@@ -11,6 +11,7 @@ public class HeroWinsDrawing extends JPanel {
     super.paintComponent(gr);
     gr.setColor(new Color(240,237,152));
     gr.fillRect(0, 0, 1000, 1000);
+    gr.setColor(new Color(0, 0, 0));
     gr.drawOval (50, 100, 80, 80);  // Head
     gr.drawLine (90, 180, 90, 325); // Body
     gr.drawLine (90, 220, 150, 220); // Right arm
