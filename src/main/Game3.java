@@ -9,7 +9,7 @@ import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Game3 {
+public class Game3 {//hi guYS
 	
 	static Hero player = new Hero(20, 3);
 	static Monster monster = new Monster(15, 5);
