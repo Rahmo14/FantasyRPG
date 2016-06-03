@@ -64,7 +64,7 @@ public static void main(String[] args){
 			static class ActionTwo implements ActionListener {
 				public void actionPerformed(ActionEvent e) {
 					JFrame game = new JFrame("Game");
-					JButton swordHero = new JButton("Sword");
+					JButton swordHero = new JButton("Attack");
 					JButton healHero = new JButton("Heal");
 					JPanel pane  = new JPanel(new BorderLayout());
 					game.add(pane);
