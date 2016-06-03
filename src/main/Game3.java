@@ -13,10 +13,10 @@ public class Game3 {
 	
 	static Hero player = new Hero(20, 3);
 	static Monster monster = new Monster(15, 5);
-	static int healthHero = 1;
+	static int healthHero = 100;
 	static int healthMonster = 100;
-	static int attkHero = 3;
-	static int atkDragon = 5;
+	static int attkHero = 5;
+	static int atkDragon = 7;
 	static JLabel hpHero = new JLabel("Your health: " + healthHero + "     ");
 	
 public static void main(String[] args){
